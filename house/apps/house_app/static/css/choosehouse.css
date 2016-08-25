@@ -16,13 +16,13 @@ h1 {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
     padding-top: 50px;
-    margin-left: 460px;
+    margin-left: 555px;
     font-family: 'HP';
     font-size: 70px;
 }
 
 #houses{
-  margin-left: 520px;
+  margin-left: 600px;
   margin-top: 80px;
   width: 500px;
 }

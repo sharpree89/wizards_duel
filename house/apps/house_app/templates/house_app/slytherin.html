@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/house.css' %}">
   <title>Document</title>
 </head>
 <body>
-  <h1>You Chose Slytherin!</h1>
-  <br>
-  {% load staticfiles %}
-
-  <img src="{% static 'images/s.png' %}"/>
-  <br>
-  <a href="/"><button>I'm Ready To Duel!</button></a>
-  <br>
-  <a href="{% url 'house:index' %}"><button>Choose A Different House</button></a>
+  <div id="house">
+    <h1>You Chose Slytherin!</h1>
+    {% load staticfiles %}
+    <img src="{% static 'images/s.png' %}"/>
+    <a href="/"><button id="button1">Choose Your Opponent</button></a>
+    <br>
+    <a href="{% url 'house:index' %}"><button id="button2">Choose A Different House</button></a>
+  </div>
 </body>
 </html>

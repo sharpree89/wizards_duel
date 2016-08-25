@@ -1,0 +1,61 @@
+body {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-color: #1E1A33;
+}
+
+@font-face {
+  font-family:'HP';
+  src: url('HARRP___.ttf');
+
+}
+
+#house{
+  margin-left: 520px;
+  margin-top: 80px;
+}
+
+  h1{
+      color: ;
+      background: -webkit-linear-gradient(#F9F68C, #FBD107);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+      padding-top: 50px;
+      font-family: 'HP';
+      font-size: 70px;
+  }
+
+  img{
+
+    margin-left: 211px;
+
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  #button1{
+    display: block;
+    margin-left: 137px;
+    margin-top: 0px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    font-family: 'HP';
+    color: #272087;
+
+  }
+
+  #button2{
+    display: block;
+    margin-left: 113px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    font-family: 'HP';
+    color: #272087;
+
+  }

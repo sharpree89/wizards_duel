@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/choosehouse.css' %}">
     <title>Houses</title>
 </head>
 <body>
   <div id="container">
-    <h1>Welcome, {{request.session.user.name}}</h1>
     <h1>Choose Your House</h1>
       <div id="houses">
         <div id="gryffindor">
@@ -34,7 +33,7 @@
           </a>
         </div>
         <div id="logout">
-          <a href="{% url 'hplog:logoff' %}"><button>Go Back</button></a>
+          <a href="/"><button>Go Back</button></a>
         </div>
       </div>
     </div>
