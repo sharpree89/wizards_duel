@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+  font-family:'HP';
+  src: url('HARRP___.ttf');
+}
+#container {
+    background: url("../images/hpbackground.png") no-repeat;
+    width: 1280px;
+    height: 900px;
+}
+#content {
+    padding-top: 400px;
+    padding-left: 500px;
+}
+form {
+    display:table;
+    color: white;
+}
+p {
+    display:table-row;
+}
+label{
+    display:table-cell;
+}
+input{
+    display: table-cell;
+}
+h3{
+    color: yellow;
+    padding:5px 0px 5px 0px;
+}
+h1{
+    color: #ff881c;
+    padding-bottom: 10px;
+    font-family: 'HP';
+    font-size: 40px;
+}
+input[type=submit] {
+    padding:5px 20px;
+    background:black;
+    border: 2px solid yellow;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 5px;
+}
+.messagelist{
+    color: white;
+}

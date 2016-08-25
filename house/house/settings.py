@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.hplogreg',
     'apps.house_app',
     'django.contrib.admin',
     'django.contrib.auth',

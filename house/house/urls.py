@@ -16,5 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^', include('apps.house_app.urls')),
+    url(r'^', include('apps.hplogreg.urls', namespace="hplog")),
+    url(r'^house/', include('apps.house_app.urls', namespace="house")),
 ]

@@ -10,30 +10,31 @@
 </head>
 <body>
   <div id="container">
+    <h1>Welcome, {{request.session.user.name}}</h1>
     <h1>Choose Your House</h1>
       <div id="houses">
         <div id="gryffindor">
-          <a href="/gryffindor">
+          <a href="{% url 'house:gryffindor' %}">
             <img src="{% static 'images/g.png' %}" />
           </a>
         </div>
         <div id="hufflepuff">
-          <a href="/hufflepuff">
+          <a href="{% url 'house:hufflepuff' %}">
             <img src="{% static 'images/h.png' %}" />
           </a>
         </div>
         <div id="ravenclaw">
-          <a href="/ravenclaw">
+          <a href="{% url 'house:ravenclaw' %}">
             <img src="{% static 'images/r.png' %}" />
           </a>
         </div>
         <div id="slytherin">
-          <a href="/slytherin">
+          <a href="{% url 'house:slytherin' %}">
             <img src="{% static 'images/s.png' %}" />
           </a>
         </div>
         <div id="logout">
-          <a href="/"><button>Go Back</button></a>
+          <a href="{% url 'hplog:logoff' %}"><button>Go Back</button></a>
         </div>
       </div>
     </div>

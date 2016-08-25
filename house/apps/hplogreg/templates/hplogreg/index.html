@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HARRY POTTER LOGIN REG</title>
+</head>
+<body>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hplogreg/css/stylesheet.css' %}" />
+    <audio id="hptheme" autoplay>
+      <source src="{% static 'hplogreg/media/hpthemesong.mp3' %}" type="audio/mpeg"></source>
+    </audio>
+    <div id="container">
+        <div id="content">
+            <h1>Welcome Wizard!</h1>
+            {% if messages %}
+                <ul class="messagelist">{% for message in messages %}
+                    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <h3>Ready to begin your journey?</h3>
+            <form action="{% url 'hplog:register' %}" method='post'>
+              {% csrf_token %}
+              <p><label for="name">Name:</label><input type="text" name='name'></p>
+              <p><label for="email">Email:</label><input type="text" name='email'></p>
+              <p><label for="password">Password:</label><input type="password" name='password'></p>
+              <p><label for="password_confirm">Confirm Password:</label><input type="password" name="password_confirm"></p>
+              <input type="submit" value="Register"><br>
+            </form>
+              <h3>Your house needs you:</h3>
+            <form action="{% url 'hplog:login' %}" method="post">
+              {% csrf_token %}
+              <p><label for="email">Email:</label> <input type="text" name="email"></p>
+              <p><label for="password">Password:</label> <input type="password" name="password"></p>
+              <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
