@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'apps.hplogreg',
     'apps.house_app',
+    'apps.duel_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

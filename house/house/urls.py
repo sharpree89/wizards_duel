@@ -18,4 +18,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^', include('apps.hplogreg.urls', namespace="hplog")),
     url(r'^house/', include('apps.house_app.urls', namespace="house")),
+    url(r'^duel/', include('apps.duel_app.urls', namespace="duel")),
 ]

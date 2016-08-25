@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'harry_app/css/stylesheet.css' %}">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+$( input ).click(function() {
+  $( "img" ).effect( "shake" , 1000);
+});
+</script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="battle_gild">
+        <h1>A Wild Professor Lockhart Appeared!</h1>
+        <img class='imgbattle' src="{% static 'harry_app/images/gild_battle.jpg' %}" />
+        <div id="attacks">
+          <h2>Expelliarmus</h2>
+          <form action="{% url 'duel:process' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="spell" value="attack" />
+              <input type="submit" value="Attack!" class="button" />
+          </form>
+            <h2>Healing Potion</h2>
+            <form action="{% url 'duel:process' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="spell" value="heal" />
+                <input type="submit" value="Heal!" />
+            </form>
+            <h2>Expulso</h2>
+            <form action="{% url 'duel:process' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="spell" value="chance" />
+                <input type="submit" value="Take a chance!" />
+            </form>
+            <h2>You are at {{request.session.total}} HP</h2>
+            <form action="{% url 'duel:process' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="spell" value="flee" />
+                <input type="submit" value="Flee!" />
+            </form>
+        </div>
+
+        <form action="{% url 'duel:clear' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="spell" value="clear" />
+            <input type="submit" value="clear!" />
+        </form>
+
+        <div id="battlelog">
+            {% for x in request.session.log %}
+            <p>{{x}}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>

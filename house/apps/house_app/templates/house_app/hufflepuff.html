@@ -13,7 +13,7 @@
     <h1>You Chose Hufflepuff!</h1>
     {% load staticfiles %}
     <img src="{% static 'images/h.png' %}"/>
-    <a href="/"><button id="button1">Choose Your Opponent</button></a>
+    <a href="{% url 'duel:index' %}"><button id="button1">Choose Your Opponent</button></a>
     <br>
     <a href="{% url 'house:index' %}"><button id="button2">Choose A Different House</button></a>
   </div>

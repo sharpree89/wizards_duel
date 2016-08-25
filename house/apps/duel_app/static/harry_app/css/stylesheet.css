@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+  font-family:'HP';
+  src: url('HARRP___.ttf');
+}
+#container {
+    background: url("../images/bg.jpg") no-repeat;
+    width: 1280px;
+    height: 720px;
+    text-align: center;
+}
+#battle_gild {
+    /*background: url("../images/bg2.jpg") no-repeat;*/
+    text-align: center;
+    padding: 20px;
+}
+.img {
+    position: relative;
+    float: center;
+    width:  100px;
+    height: 100px;
+    /*background-position: 50% 50%;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.imgbattle {
+    position: relative;
+    float: right;
+    width:  250px;
+    height: 400px;
+    /*background-position: 50% 50%;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#battlelog{
+  position: relative;
+  float: left;
+  margin-bottom: 10px;
+  width:  350px;
+  height: 100px;
+  overflow: auto;
+  border-style: dotted;
+}
+#content {
+    padding-top: 300px;
+    padding-left: 500px;
+}
+#attacks{
+    /*position: relative;*/
+    /*text-align: center;*/
+    margin-right: 10px;
+    width:  350px;
+    height: 280px;
+    overflow: auto;
+}
+#attacks input{
+  margin-left: 145px;
+  /*text-align: center;*/
+}
+
+
+a{
+  text-decoration: none;
+}
+form {
+    display:table;
+    color: white;
+}
+p {
+    font-size: 12px;
+}
+label{
+    display:table-cell;
+}
+input{
+    display: table-cell;
+}
+h3{
+    color: ;
+    background: -webkit-linear-gradient(#FBD107 , #FBD107 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    padding:5px 0px 5px 0px;
+    font-family: 'HP';
+}
+h2{
+    color: ;
+    background: -webkit-linear-gradient(#FBD107 , #FF3200 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding:5px 0px 5px 0px;
+    font-family: 'HP';
+    font-size: 24px;
+}
+h1 {
+   color: ;
+   background: -webkit-linear-gradient(#FBD107 , #FBD107 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   padding-top: 20px;
+   font-family: 'HP';
+   font-size: 40px;
+}

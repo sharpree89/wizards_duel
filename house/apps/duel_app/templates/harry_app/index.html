@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'harry_app/css/stylesheet.css' %}">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <title>Welcome</title>
+    <body>
+        <div id="container">
+          <h1>Choose Your Opponent</h1>
+            <a href="{% url 'duel:lockhart' %}"><img class ='img' src="{% static 'harry_app/images/gild.jpg' %}" />
+            <h3>Gilderoy Lockhart</h3></a>
+            <img class ='img' src="{% static 'harry_app/images/pom.jpg' %}" />
+            <h3>Pomona Sprout</h3>
+            <img class ='img' src="{% static 'harry_app/images/malfoy.jpg' %}" />
+            <h3>Draco Malfoy</h3>
+            <img class ='img' src="{% static 'harry_app/images/harry.jpg' %}" />
+            <h3>Harry Potter</h3>
+        </div>
+    </body>
+</html>
