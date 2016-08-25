@@ -1,0 +1,59 @@
+body {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-color: #1E1A33;
+}
+
+@font-face {
+  font-family:'HP';
+  src: url('HARRP___.ttf');
+
+}
+
+h1 {
+    color: ;
+    background: -webkit-linear-gradient(#F9F68C, #FBD107);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+    padding-top: 50px;
+    margin-left: 460px;
+    font-family: 'HP';
+    font-size: 70px;
+}
+
+#houses{
+  margin-left: 520px;
+  margin-top: 80px;
+  width: 500px;
+}
+
+#gryffindor{
+  display: inline-block;
+}
+
+#hufflepuff{
+  display: inline-block;
+}
+
+#ravenclaw{
+  display: inline-block;
+}
+
+#slytherin{
+  display: inline-block;
+}
+
+#logout{
+  margin-top: 50px;
+  margin-left: 120px;
+}
+
+button{
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 30px;
+  font-family: 'HP';
+  color: #272087;
+
+}
