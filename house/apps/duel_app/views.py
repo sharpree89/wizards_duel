@@ -35,6 +35,7 @@ def process_potter(request):
     myenemyhp = request.session["myenemyhp"]
 
     if myuserhp <= 0:
+        request.session.clear()
         return redirect(reverse('duel:lose'))
     elif myenemyhp <= 0:
         return redirect(reverse('duel:index'))
@@ -84,6 +85,7 @@ def process(request):
     enemyhp = request.session["enemyhp"]
 
     if userhp <= 0:
+        request.session.clear()
         return redirect(reverse('duel:index'))
     elif enemyhp <= 0:
         return redirect(reverse('duel:potter'))
