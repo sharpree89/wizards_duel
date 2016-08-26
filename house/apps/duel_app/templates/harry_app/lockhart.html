@@ -9,59 +9,59 @@
     <link rel="stylesheet" type="text/css" href="{% static 'harry_app/css/stylesheet.css' %}">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-$( input ).click(function() {
-  $( "img" ).effect( "shake" , 1000);
-});
-</script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <div id="battle_gild">
         <h1>A Wild Professor Lockhart Appeared!</h1>
-        <h2>Enemy HP: {{request.session.enemyhp}}</h2>
+        <h2 id="user">Your HP: {{request.session.userhp}}</h2>
+        <h2 id="enemy">Enemy HP: {{request.session.enemyhp}}</h2>
         <img class='imgbattle' src="{% static 'harry_app/images/gild_battle.jpg' %}" />
         <img class="gandalf" src="{% static 'harry_app/images/gandalf.jpg' %}" />
-        <h2>Your HP: {{request.session.userhp}}</h2>
         <div id="middle">
           <div id="attacks">
             <h2>Expelliarmus</h2>
             <form action="{% url 'duel:process' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="spell" value="attack" />
-                <input type="submit" value="Attack!" />
+                <button type="submit" value="Attack!" id="submit">Attack</button>
             </form>
               <h2>Healing Potion</h2>
               <form action="{% url 'duel:process' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="spell" value="heal" />
-                  <input type="submit" value="Heal!" />
+                  <button type="submit" value="Heal!" id="submit">Heal</button>
               </form>
               <h2>Expulso</h2>
               <form action="{% url 'duel:process' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="spell" value="chance" />
-                  <input type="submit" value="Take a chance!" />
+                  <button type="submit" value="Take a chance!" id="submit">Take a chance!</button>
               </form>
               <h2>Flee</h2>
               <form action="{% url 'duel:clear' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="spell" value="flee" />
-                  <input type="submit" value="yes!" />
+                  <button type="submit" value="yes!" id="submit">YES!</button>
               </form>
           </div>
+        </div>
           <div id="battlelog">
               {% for x in request.session.log reversed %}
               <p>{{x}}</p>
               {% endfor %}
           </div>
-        </div>
-
-
-
-    </div>
-
+      </div>
+    <script>
+    $( "button#submit" ).click(function() {
+      $( "img.gandalf" ).effect( "shake");
+    });
+    $( "button#submit" ).click(function() {
+      $( "img.imgbattle" ).effect( "shake");
+    });
+</script>
 </body>
 
 </html>

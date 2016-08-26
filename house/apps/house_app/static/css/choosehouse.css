@@ -15,15 +15,14 @@ h1 {
     background: -webkit-linear-gradient(#F9F68C, #FBD107);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-    padding-top: 50px;
+    /*padding-top: 20px;*/
     margin-left: 555px;
     font-family: 'HP';
-    font-size: 70px;
+    font-size: 60px;
 }
 
 #houses{
   margin-left: 600px;
-  margin-top: 80px;
   width: 500px;
 }
 

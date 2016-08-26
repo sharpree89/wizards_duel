@@ -9,20 +9,20 @@
 #container {
     background: url("../images/bg.jpg") no-repeat;
     width: 1280px;
-    height: 720px;
+    height: 900px;
     text-align: center;
 }
 #battle_gild {
-    /*background: url("../images/bg2.jpg") no-repeat;*/
     text-align: center;
     padding: 20px;
+    width: 1280px;
+    height: 900px;
 }
 .img {
     position: relative;
     float: center;
     width:  100px;
     height: 100px;
-    /*background-position: 50% 50%;*/
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -34,17 +34,36 @@
     /*background-position: 50% 50%;*/
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 30px;
 
 }
 #battlelog{
-  position: relative;
-  float: left;
   margin-bottom: 10px;
-  margin-left: 72px;
-  width:  400px;
+  width:  600px;
   height: 200px;
   overflow: auto;
-  border-style: dotted;
+  vertical-align: top;
+  margin-left: 20px;
+  margin:0 auto;
+text-align:center;
+}
+button#submit{
+    font-family: "HP";
+    padding: 5px;
+    width: 150px;
+    font-size: 16px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:transparent;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+    margin-left: 101px;
+}
+#battlelog p{
+     font-family: "HP";
+     font-size: 20px;
+     color: red;
 }
 #content {
     padding-top: 300px;
@@ -95,6 +114,7 @@ h2{
     padding:5px 0px 5px 0px;
     font-family: 'HP';
     font-size: 24px;
+    margin: 5px 0px;
 }
 h1 {
    color: ;
@@ -105,21 +125,26 @@ h1 {
    font-family: 'HP';
    font-size: 40px;
 }
-
+h2#enemy{
+    display: inline-block;
+    margin-left: 150px;
+}
+h2#user{
+    display: inline-block;
+    margin-right: 150px;
+}
 .gandalf{
   float:left;
   position: relative;
   width:  250px;
   height: 400px;
-  /*background-position: 50% 50%;*/
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 30px;
 }
 
 #middle{
-
   width: 500px;
   display: inline-block;
   vertical-align: top;
-
 }
