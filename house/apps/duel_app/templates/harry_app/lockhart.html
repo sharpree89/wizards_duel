@@ -20,40 +20,46 @@ $( input ).click(function() {
 <body>
     <div id="battle_gild">
         <h1>A Wild Professor Lockhart Appeared!</h1>
-        <h2>{{request.session.enemyhp}}</h2>
+        <h2>Enemy HP: {{request.session.enemyhp}}</h2>
         <img class='imgbattle' src="{% static 'harry_app/images/gild_battle.jpg' %}" />
-        <div id="attacks">
-          <h2>Expelliarmus</h2>
-          <form action="{% url 'duel:process' %}" method="POST">
-              {% csrf_token %}
-              <input type="hidden" name="spell" value="attack" />
-              <input type="submit" value="Attack!" class="button" />
-          </form>
-            <h2>Healing Potion</h2>
+        <img class="gandalf" src="{% static 'harry_app/images/gandalf.jpg' %}" />
+        <h2>Your HP: {{request.session.userhp}}</h2>
+        <div id="middle">
+          <div id="attacks">
+            <h2>Expelliarmus</h2>
             <form action="{% url 'duel:process' %}" method="POST">
                 {% csrf_token %}
-                <input type="hidden" name="spell" value="heal" />
-                <input type="submit" value="Heal!" />
+                <input type="hidden" name="spell" value="attack" />
+                <input type="submit" value="Attack!" />
             </form>
-            <h2>Expulso</h2>
-            <form action="{% url 'duel:process' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="spell" value="chance" />
-                <input type="submit" value="Take a chance!" />
-            </form>
-            <h2>You are at {{request.session.userhp}} HP</h2>
-            <form action="{% url 'duel:clear' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="spell" value="flee" />
-                <input type="submit" value="Flee!" />
-            </form>
+              <h2>Healing Potion</h2>
+              <form action="{% url 'duel:process' %}" method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="spell" value="heal" />
+                  <input type="submit" value="Heal!" />
+              </form>
+              <h2>Expulso</h2>
+              <form action="{% url 'duel:process' %}" method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="spell" value="chance" />
+                  <input type="submit" value="Take a chance!" />
+              </form>
+              <h2>Flee</h2>
+              <form action="{% url 'duel:clear' %}" method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="spell" value="flee" />
+                  <input type="submit" value="yes!" />
+              </form>
+          </div>
+          <div id="battlelog">
+              {% for x in request.session.log reversed %}
+              <p>{{x}}</p>
+              {% endfor %}
+          </div>
         </div>
 
-        <div id="battlelog">
-            {% for x in request.session.log reversed %}
-            <p>{{x}}</p>
-            {% endfor %}
-        </div>
+
+
     </div>
 
 </body>

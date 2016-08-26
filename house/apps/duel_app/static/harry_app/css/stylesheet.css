@@ -40,8 +40,9 @@
   position: relative;
   float: left;
   margin-bottom: 10px;
-  width:  350px;
-  height: 100px;
+  margin-left: 72px;
+  width:  400px;
+  height: 200px;
   overflow: auto;
   border-style: dotted;
 }
@@ -52,9 +53,9 @@
 #attacks{
     /*position: relative;*/
     /*text-align: center;*/
-    margin-right: 10px;
+    margin-left: 82px;
     width:  350px;
-    height: 280px;
+    height: 400px;
     overflow: auto;
 }
 #attacks input{
@@ -103,4 +104,22 @@ h1 {
    padding-top: 20px;
    font-family: 'HP';
    font-size: 40px;
+}
+
+.gandalf{
+  float:left;
+  position: relative;
+  width:  250px;
+  height: 400px;
+  /*background-position: 50% 50%;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#middle{
+
+  width: 500px;
+  display: inline-block;
+  vertical-align: top;
+
 }
