@@ -6,13 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load staticfiles %}
   <link rel="stylesheet" type="text/css" href="{% static 'harry_app/css/gameover.css' %}">
-  <title>You Win!</title>
+  <title>You Lose!</title>
 </head>
 <body>
   <div id="container">
-    <h1>Congratulations, {{ request.session.user.name }}!</h1>
+    <h1>Aww, better luck next time {{ request.session.user.name }}!</h1>
     <img src="{% static 'harry_app/images/dueling.jpg' %}" />
-    <br>
     <br>
     <a href="{% url 'duel:index' %}"><button id="button1">Duel Again</button></a>
     <br>

@@ -30,12 +30,12 @@ def potter(request):
     return render(request, "harry_app/potter.html")
 
 def process_potter(request):
-    potterattack = random.randint(2, 5)
+    potterattack = random.randint(10, 15)
     myuserhp = request.session["myuserhp"]
     myenemyhp = request.session["myenemyhp"]
 
     if myuserhp <= 0:
-        return redirect(reverse('duel:index'))
+        return redirect(reverse('duel:lose'))
     elif myenemyhp <= 0:
         return redirect(reverse('duel:index'))
 
@@ -65,7 +65,7 @@ def process_potter(request):
             request.session["myenemyhp"] -= attackNum
             request.session["mylog"].append("Expelliarmus hits for " + str(attackNum) + " damage!")
             request.session["myuserhp"] -= potterattack
-            request.session["mylog"].append("Harry casts Obliviate on you for " + str(potterattack) + " damage!")
+            request.session["mylog"].append("Harry casts Expecto Patronum on you for " + str(potterattack) + " damage!")
 
         elif request.POST["spell"] == "chance":
             chanceNum = random.randint(-10, 10)
@@ -79,7 +79,7 @@ def process_potter(request):
     return redirect(reverse('duel:potter'))
 
 def process(request):
-    lockhartattack = random.randint(2, 5)
+    lockhartattack = random.randint(5, 7)
     userhp = request.session["userhp"]
     enemyhp = request.session["enemyhp"]
 
@@ -104,20 +104,20 @@ def process(request):
                 userhp += healNum
                 request.session["log"].append("Max health")
             else:
-                healNum = random.randint(2, 5)
+                healNum = random.randint(5, 7)
                 request.session["userhp"] += healNum
                 userhp += healNum
                 request.session["log"].append("You healed " + str(healNum) + " to your total HP!")
 
         elif request.POST["spell"] == "attack":
-            attackNum = random.randint(2, 5)
+            attackNum = random.randint(5, 7)
             request.session["enemyhp"] -= attackNum
             request.session["log"].append("Expelliarmus hits for " + str(attackNum) + " damage!")
             request.session["userhp"] -= lockhartattack
             request.session["log"].append("Lockhart casts Obliviate on you for " + str(lockhartattack) + " damage!")
 
         elif request.POST["spell"] == "chance":
-            chanceNum = random.randint(-10, 10)
+            chanceNum = random.randint(-15, 15)
             if chanceNum < 0:
                 request.session["log"].append("Expulso blew up in your face! You lost " + str(chanceNum) + " hp!")
                 request.session["userhp"] += chanceNum
@@ -126,6 +126,8 @@ def process(request):
                 request.session["enemyhp"] -= chanceNum
     return redirect(reverse('duel:lockhart'))
 
+def lose(request):
+    return render(request, "harry_app/youlose.html")
 
 def clear(request):
     request.session.clear()
