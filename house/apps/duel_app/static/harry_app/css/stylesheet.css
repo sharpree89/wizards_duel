@@ -40,18 +40,19 @@
 #battlelog{
   margin-bottom: 10px;
   width:  600px;
-  height: 200px;
+  height: 94px;
   overflow: auto;
   vertical-align: top;
   margin-left: 20px;
   margin:0 auto;
-text-align:center;
+  text-align:center;
 }
+
 button#submit{
     font-family: "HP";
     padding: 5px;
     width: 150px;
-    font-size: 16px;
+    font-size: 18px;
     -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -62,9 +63,24 @@ button#submit{
 }
 #battlelog p{
      font-family: "HP";
-     font-size: 20px;
-     color: red;
+     font-size: 30px;
+     color: ;
+     background: -webkit-linear-gradient(#cc37cc, #7c1d7c);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     -webkit-animation: fadeinout 0s linear forwards;
+     animation: fadeinout 4s linear forwards;
+     opacity: 0;
 }
+
+@-webkit-keyframes fadeinout {
+  50%{opacity: 1;}
+}
+
+@keyframes fadeinout {
+  50% {opacity: 1;}
+}
+
 #content {
     padding-top: 300px;
     padding-left: 500px;
@@ -74,7 +90,7 @@ button#submit{
     /*text-align: center;*/
     margin-left: 82px;
     width:  350px;
-    height: 400px;
+    height: 450px;
     overflow: auto;
 }
 #attacks input{
@@ -113,7 +129,7 @@ h2{
     -webkit-text-fill-color: transparent;
     padding:5px 0px 5px 0px;
     font-family: 'HP';
-    font-size: 24px;
+    font-size: 28px;
     margin: 5px 0px;
 }
 h1 {
@@ -145,6 +161,7 @@ h2#user{
 
 #middle{
   width: 500px;
+  height: 450px;
   display: inline-block;
   vertical-align: top;
 }

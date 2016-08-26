@@ -72,7 +72,7 @@ def process_potter(request):
             if chanceNum < 0:
                 request.session["mylog"].append("Expulso blew up in your face! You lost " + str(chanceNum) + " hp!")
                 request.session["myuserhp"] += chanceNum
-            else:
+            elif chanceNum > 0:
                 request.session["mylog"].append("Expulso was a success, " + " Harry takes " + str(chanceNum) + " damage")
                 request.session["myenemyhp"] -= chanceNum
 
@@ -121,7 +121,7 @@ def process(request):
             if chanceNum < 0:
                 request.session["log"].append("Expulso blew up in your face! You lost " + str(chanceNum) + " hp!")
                 request.session["userhp"] += chanceNum
-            else:
+            elif chanceNum > 0:
                 request.session["log"].append("Expulso was a success, " + " Lockhart takes " + str(chanceNum) + " damage")
                 request.session["enemyhp"] -= chanceNum
     return redirect(reverse('duel:lockhart'))
