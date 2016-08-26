@@ -14,13 +14,13 @@ $( input ).click(function() {
   $( "img" ).effect( "shake" , 1000);
 });
 </script>
-
     <title>Document</title>
 </head>
 
 <body>
     <div id="battle_gild">
         <h1>A Wild Professor Lockhart Appeared!</h1>
+        <h2>{{request.session.enemyhp}}</h2>
         <img class='imgbattle' src="{% static 'harry_app/images/gild_battle.jpg' %}" />
         <div id="attacks">
           <h2>Expelliarmus</h2>
@@ -41,22 +41,16 @@ $( input ).click(function() {
                 <input type="hidden" name="spell" value="chance" />
                 <input type="submit" value="Take a chance!" />
             </form>
-            <h2>You are at {{request.session.total}} HP</h2>
-            <form action="{% url 'duel:process' %}" method="POST">
+            <h2>You are at {{request.session.userhp}} HP</h2>
+            <form action="{% url 'duel:clear' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="spell" value="flee" />
                 <input type="submit" value="Flee!" />
             </form>
         </div>
 
-        <form action="{% url 'duel:clear' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="spell" value="clear" />
-            <input type="submit" value="clear!" />
-        </form>
-
         <div id="battlelog">
-            {% for x in request.session.log %}
+            {% for x in request.session.log reversed %}
             <p>{{x}}</p>
             {% endfor %}
         </div>
